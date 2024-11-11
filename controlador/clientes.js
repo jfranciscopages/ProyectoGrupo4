@@ -1,6 +1,6 @@
 import Servicio from '../servicio/clientes.js'
 
-
+//Controlador
 class Controlador {
     constructor() {
         this.servicio = new Servicio()
