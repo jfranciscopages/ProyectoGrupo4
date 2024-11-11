@@ -38,7 +38,7 @@ class ModelMongoDB {
     borrarPropiedad = async id => {
         if(!CnxMongoDB.connectionOk) throw Error ('ERROR CNX BASE DE DATOS')
 
-        const propiedadBorrada = await this.obtenerpropiedad(id)
+        const propiedadBorrada = await this.obtenerPropiedad(id)
         await CnxMongoDB.db.collection('propiedades').deleteOne({_id: ObjectId.createFromHexString(id)})
         return propiedadBorrada
     }
