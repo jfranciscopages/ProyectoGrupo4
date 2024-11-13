@@ -1,4 +1,5 @@
 import Servicio from '../servicio/clientes.js'
+import ServicioPropiedades from '../servicio/propiedades.js'
 
 //Controlador
 class Controlador {
@@ -39,9 +40,10 @@ class Controlador {
             if(!clienteID || !propiedadID) throw new Error('Cliente o Propiedad vacios')
 
             const cliente = await this.servicio.obtenerClientes(clienteID)
-            //Habria que traer la propiedad? const propiedad = await Propiedad.ob
-            //const mensaje = ""
-            //this.servicio.enviarNotificacion(mensaje,telefonoDestino)
+            const propiedad = await this.ServicioPropiedades.obtenerPropiedades(propiedadID)
+            const mensaje = ""
+            //const mensaje = `Usted reservo la propiedad ID ${propiedad.id} que se encuentra en el barrio de ${propiedad.barrio}.`
+            this.servicio.enviarNotificacion(mensaje,cliente.telefono)
             res.status(200).send('Notificacion enviada')
         }
         catch(error) {
