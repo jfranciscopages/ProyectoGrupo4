@@ -1,5 +1,5 @@
 import ModelFactory from "../model/DAOs/clientesFactory.js"
-
+import { validar } from "./validaciones/clientes.js"
 import config from '../config.js'
 
 class Servicio {
@@ -9,7 +9,7 @@ class Servicio {
  
     obtenerClientes = async id => {
         if (id) {
-            const cliente = await this.model.obtenerClientes(id)
+            const cliente = await this.model.obtenerCliente(id)
             return cliente
         }
         else {

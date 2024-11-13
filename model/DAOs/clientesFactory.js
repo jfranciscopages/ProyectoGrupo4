@@ -4,7 +4,7 @@ class ModelFactory {
     static get(tipo) {
         switch (tipo) {
             case 'MONGODB':
-                console.log('*** Persistiendo en MongoDB ***')
+                console.log('*** (Clientes) Persistiendo en MongoDB ***')
                 return new ModelMongoDB('clientes.json')
 
             default:

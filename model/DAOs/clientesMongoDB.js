@@ -19,7 +19,7 @@ class ModelMongoDB {
     guardarCliente = async cliente => {
         if(!CnxMongoDB.connectionOk) throw Error ('ERROR CNX BASE DE DATOS')
 
-        await CnxMongoDB.db.collection('propiedades').insertOne(cliente)
+        await CnxMongoDB.db.collection('clientes').insertOne(cliente)
         return cliente
     }
 }
