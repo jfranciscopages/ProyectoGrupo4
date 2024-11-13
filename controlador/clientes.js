@@ -30,6 +30,24 @@ class Controlador {
             res.status(500).json({error: error.message})
         }
     }
+
+    enviarNotificacion = async (req,res) => {
+        try {
+            const {clienteID} = req.body
+            const {propiedadID} = req.body
+
+            if(!clienteID || !propiedadID) throw new Error('Cliente o Propiedad vacios')
+
+            const cliente = await this.servicio.obtenerClientes(clienteID)
+            //Habria que traer la propiedad? const propiedad = await Propiedad.ob
+            //const mensaje = ""
+            //this.servicio.enviarNotificacion(mensaje,telefonoDestino)
+            res.status(200).send('Notificacion enviada')
+        }
+        catch(error) {
+            res.status(500).json({error: error.message})
+        }
+    }
 }
 
 export default Controlador

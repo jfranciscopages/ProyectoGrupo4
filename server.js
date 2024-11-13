@@ -1,7 +1,6 @@
 import express from 'express'
 import RouterClientes from './router/clientes.js'
 import RouterPropiedades from './router/propiedades.js'
-
 import config from './config.js'
 import CnxMongoDB from './model/DBMongo.js'
 
