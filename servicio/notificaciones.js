@@ -6,12 +6,12 @@ class Notificaciones {
         const client = require('twilio')(config.accountSid, config.authToken)
     }
 
-    crearMensaje = async (mensaje,telefonoDestino)=>{
+    enviarNotificacion = async (mensaje,telefonoDestino)=>{
         try {
             const message = await client.messages.create({
               body: mensaje,
               to: telefonoDestino, //VER DE PASARLO A UNA VARIABLE
-              from: '+12345678901',
+              from: '+12345678901', //NUMERO DE TWILIO
             });
             console.log(message);
             return message

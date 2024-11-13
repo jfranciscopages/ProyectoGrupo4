@@ -1,5 +1,6 @@
 import Servicio from '../servicio/clientes.js'
 import ServicioPropiedades from '../servicio/propiedades.js'
+import ServicioNotificaciones from '../servicio/notificaciones.js'
 
 //Controlador
 class Controlador {
@@ -42,8 +43,8 @@ class Controlador {
             const cliente = await this.servicio.obtenerClientes(clienteID)
             const propiedad = await this.ServicioPropiedades.obtenerPropiedades(propiedadID)
             const mensaje = ""
-            //const mensaje = `Usted reservo la propiedad ID ${propiedad.id} que se encuentra en el barrio de ${propiedad.barrio}.`
-            this.servicio.enviarNotificacion(mensaje,cliente.telefono)
+            //const mensaje = `Usted reservo la propiedad ID ${propiedad.id} que se encuentra en el barrio de ${propiedad.barrio} en la calle ${propiedad.calle} ${propiedad.altura}.`
+            this.ServicioNotificaciones.enviarNotificacion(mensaje,cliente.telefono)
             res.status(200).send('Notificacion enviada')
         }
         catch(error) {
