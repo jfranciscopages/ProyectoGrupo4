@@ -1,9 +1,9 @@
-import Servicio from '../servicio/propiedades.js'
+import ServicioPropiedad from '../servicio/propiedades.js'
 
 
 class Controlador {
     constructor() {
-        this.servicio = new Servicio()
+        this.servicio = new ServicioPropiedad()
     }
 
     obtenerPropiedades = async (req,res) => {

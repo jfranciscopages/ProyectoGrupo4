@@ -3,7 +3,7 @@ import ModelFactory from "../model/DAOs/propiedadesFactory.js"
 import config from '../config.js'
 import { validar } from "./validaciones/propiedades.js"
 
-class Servicio {
+class ServicioPropiedad {
     constructor() {
         this.model = ModelFactory.get(config.MODO_PERSISTENCIA)
     }
@@ -45,4 +45,4 @@ class Servicio {
 
 }
 
-export default Servicio
+export default ServicioPropiedad
