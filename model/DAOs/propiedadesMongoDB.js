@@ -42,6 +42,22 @@ class ModelMongoDB {
         await CnxMongoDB.db.collection('propiedades').deleteOne({_id: ObjectId.createFromHexString(id)})
         return propiedadBorrada
     }
+
+    // Obtener el precio promedio por zona
+    obtenerPrecioPromedioPorBarrio = async () => {
+        if (!CnxMongoDB.connectionOk) throw Error('ERROR CNX BASE DE DATOS');
+        
+        const resultado = await CnxMongoDB.db.collection('propiedades').aggregate([
+            {
+                $group: {
+                    _id: "$barrio",  // Agrupamos por barrio
+                    promedio_precio: { $avg: "$precio" }  // Calculamos el promedio del precio
+                }
+            }
+        ]).toArray();
+
+        return resultado;
+    };
 }
 
 export default ModelMongoDB
