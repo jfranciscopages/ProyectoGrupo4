@@ -20,8 +20,8 @@ describe('test apirestful', () => {
     describe('POST', () => {
         it('deberia incorporar un cliente', async () => {
             const clienteEnviado = generador.get()
-
-            const response = await request.post('/api/clientes').send(clienteEnviado)
+            
+            const response = await request.post('/api/clientes').send(clienteEnviado)            
             expect(response.status).to.eql(200)
 
             const clienteGuardado = response.body
