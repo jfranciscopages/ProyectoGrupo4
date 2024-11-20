@@ -1,4 +1,4 @@
-import { ClientEncryption, MongoClient } from 'mongodb'
+import { MongoClient } from 'mongodb'
 import config from '../config.js'
 
 
