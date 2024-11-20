@@ -1,12 +1,10 @@
 import ModelFactory from "../model/DAOs/clientesFactory.js"
 import { validar } from "./validaciones/clientes.js"
 import config from '../config.js'
-import Notificaciones from "../utilitarios/notificaciones.js"
 
 class Servicio {
     constructor() {
         this.model = ModelFactory.get(config.MODO_PERSISTENCIA)
-        this.notificador = new Notificaciones()
     }
  
     obtenerClientes = async id => {
@@ -25,7 +23,6 @@ class Servicio {
         const rta = validar(cliente)
         if (rta.result) {
             const clienteGuardado = await this.model.guardarCliente(cliente)
-            this.notificador.enviarNotificacionBienvenida(clienteGuardado)
             return clienteGuardado
         }
         else {

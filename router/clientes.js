@@ -11,7 +11,8 @@ class Router {
 
         router.get('/:id?', this.controlador.obtenerClientes)
         router.post('/', this.controlador.guardarCliente)
-        
+        router.post('/notificacion', this.controlador.enviarNotificacion)
+
         return router
     }
 }
