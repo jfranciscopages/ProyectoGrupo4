@@ -8,8 +8,8 @@ class ModelFactory {
                 return new ModelMongoDB('propiedades.json')
 
             default:
-                console.log('*** Persistiendo en Memoria (default) ***')
-                return new ModelMem()
+                // console.log('*** Persistiendo en Memoria (default) ***')
+                // return new ModelMem()
         }
     }
 }
