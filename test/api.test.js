@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import config from "../config.js"
 import generador from './generador/cliente.js'
 
-const request = supertest(`http://127.0.0.1:${config.PORT}`)
+const request = supertest(`http://127.0.0.1:8080`)
 
 describe('test apirestful', () => {
     describe('GET', () => {

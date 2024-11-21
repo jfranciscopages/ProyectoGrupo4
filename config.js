@@ -14,8 +14,6 @@ const twilioPhone = process.env.twilioPhone || '' */
 const SENDGRID_API_KEY=process.env.SENDGRID_API_KEY || ''
 const SENDGRIP_SENDER=process.env.SENDGRIP_SENDER || ''
 
-
-
 export default {
     PORT,    
     MODO_PERSISTENCIA,
@@ -23,5 +21,4 @@ export default {
     BASE,
     SENDGRID_API_KEY,
     SENDGRIP_SENDER
-
 }

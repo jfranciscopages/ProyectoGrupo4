@@ -2,6 +2,10 @@ import ModelFactory from "../model/DAOs/clientesFactory.js"
 import { validar } from "./validaciones/clientes.js"
 import config from '../config.js'
 import Notificaciones from "../utilitarios/notificaciones.js"
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1e150fdc802b9904816be21f28893b9abe2b857
 
 class Servicio {
     constructor() {
