@@ -16,6 +16,7 @@ class Router {
         router.put('/:id', this.controlador.actualizarPropiedad)
         router.delete('/:id', this.controlador.borrarPropiedad)
 
+
         return router
     }
 }

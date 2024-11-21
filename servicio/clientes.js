@@ -3,7 +3,6 @@ import { validar } from "./validaciones/clientes.js"
 import config from '../config.js'
 import Notificaciones from "../utilitarios/notificaciones.js"
 
-
 class Servicio {
     constructor() {
         this.model = ModelFactory.get(config.MODO_PERSISTENCIA)
