@@ -1,9 +1,8 @@
 import supertest from "supertest"
 import { expect } from 'chai'
-import config from "../config.js"
 import generador from './generador/cliente.js'
 
-const request = supertest(`http://127.0.0.1:8080`)
+const request = supertest('http://127.0.0.1:8080')
 
 describe('test apirestful', () => {
     describe('GET', () => {
@@ -21,8 +20,8 @@ describe('test apirestful', () => {
     describe('POST', () => {
         it('deberia incorporar un cliente', async () => {
             const clienteEnviado = generador.get()
-            
-            const response = await request.post('/api/clientes').send(clienteEnviado)            
+
+            const response = await request.post('/api/clientes').send(clienteEnviado)
             expect(response.status).to.eql(200)
 
             const clienteGuardado = response.body
